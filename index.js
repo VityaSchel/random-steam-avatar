@@ -1,6 +1,6 @@
 async function getAvatars() {
-  let fetch, useWindowFetch = false
-  try { window.fetch } catch(e) { useWindowFetch = true }
+  let fetch, useWindowFetch = true
+  try { window.fetch } catch(e) { useWindowFetch = false }
   if(useWindowFetch) fetch = (await import('node-fetch')).default
   else fetch = window.fetch
   const response = await fetch('https://randomavatar.com/more.php')
