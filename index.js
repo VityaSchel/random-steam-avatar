@@ -5,7 +5,7 @@ async function getAvatars() {
   else fetch = (await import('node-fetch')).default
   let response
   try { response = await fetch('https://randomavatar.com/more.php') } catch(e) {
-    response = await fetch('https://api.allorigins.win/raw?url=https://randomavatar.com/more.php')
+    response = await fetch(`https://api.allorigins.win/raw?url=https://randomavatar.com/more.php&time=${Date.now()}`)
   }
   const html = await response.text()
   const images = Array.from(html.matchAll(/(https:\/\/cdn\.cloudflare\.steamstatic\.com.*?)"/g)).map(img => img[1])
