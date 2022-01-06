@@ -1,16 +1,17 @@
 {
   "name": "random-steam-avatar",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
+  "type":"module",
   "main": "index.min.js",
   "scripts": {
-    "build": "cat index.js | babel -f index.js -o index.min.js --presets @babel/preset-env && uglifyjs --compress --mangle -o index.min.js -- index.min.js"
+    "build": "uglifyjs --compress --mangle -o index.min.js -- index.js"
   },
   "keywords": [],
   "author": "vityaschel <vityaschel@utidteam.com> (https://hloth.dev/)",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.6"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.7"
